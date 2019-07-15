@@ -5,11 +5,11 @@ console.log('Here is : ', 'array')
 /*
 1
 Correct the syntax error
- [ 1,7  9  45, ]
+ [ 1, 7, 9, 45]
 
- ["Str" "alex","moh"
+ ["Str", "alex","moh"]
 
- 'the','fox' 'over' lazy, 'dog',  ]
+ ['the', 'fox', 'over', lazy, 'dog']
 
 */
 
@@ -18,7 +18,8 @@ Correct the syntax error
 2
 What the index of "Banana","Tomato"
 var fruits=["Tomato","Banana","Watermelon"]
-
+Banana = 1,
+Tomato = 0  
 */
 
 
@@ -31,6 +32,13 @@ Create an array represents your:
 */
 
 
+var favoriteFood = ['mansaf', 'maqlopa', 'mahashee', 'zarp', 'kabseh'];
+var favoriteSport = ['footbal', 'tennis', 'basketball']
+var favoriteMovie = ['Avatar', 'Training Day', 'American Ganstar'];
+
+
+
+
 /*
 4
 Create a function called firstOfArray
@@ -41,16 +49,28 @@ Ex: firstOfArray([1,4,5]) => 1
 Ex: firstOfArray(["t","u","g","x"]) => "t"
 */
 
+ function firstOfArray(arr) {
+     return arr[0];
+ }
+
+ 
+
+
+
 
 /*
 5
 Create a function called lastOfArray
 that take an array as a parameter
-and return the first element in an array
+and return the last element in an array
 
 Ex: lastOfArray([1,4,5]) => 5
 Ex: lastOfArray(["t","u","g","x"]) => "x"
 */
+
+function lastOfArray(arr) {
+    return arr[arr.length -1];
+}
 
 
 /*
@@ -59,7 +79,21 @@ Using console make this array to be like this one (push, unshift, shift, pop)
 
 var array = [0,5,7,9]
 => [1,3,4,6,8,9,10]
+[9, 10]
 */
+
+var array = [0, 5, 7, 9];
+array.shift();
+array.shift();
+array.shift();
+array.push(10);
+array.unshift(8);
+array.unshift(6);
+array.unshift(4);
+array.unshift(3);
+array.unshift(1);
+
+
 
 
 /*
@@ -67,7 +101,18 @@ var array = [0,5,7,9]
 Using the console try to figure out what the thing thats (push, unshift, shift, pop) return to you
 
 var array2 = [5,9,-7,3.5]
+
+push:       the new size of array (length)
+unshift:    the new size of the array (length)
+pop:        the deleted element from the array
+shift:      the removed element from the array
 */
+
+// function push(newItem) {
+//     arr[array.lenght] = newItem;
+//     return arr.length;
+// }
+
 
 
 /*
@@ -80,6 +125,24 @@ and return the two middle elemnt in an array if it is have an even elemnets
 Ex: middleOfArray([1,4,5]) => 4
 Ex: middleOfArray(["t","u","g","x"]) =>"u and g"
 */
+
+function middleOfArray(arr) {
+    if(arr.length % 2 !== 0) {
+        var middleIndex = array.length / 2 - 0.5
+        return arr[middleIndex];
+    } 
+    else {
+        var indexMiddleItem1 = arr.length / 2;
+        var indexMiddleItem2 = arr.length / 2 - 1;
+        var middleValue1 = arr[indexMiddleItem1];
+        var middleValue2 = arr[indexMiddleItem2];
+
+        var results = [middleValue1, middleValue2]
+        return results;
+
+    }
+}
+
 
 
 /*
@@ -94,6 +157,11 @@ animals; => ['zebra', 'elephant']
 var nums= [1,2,3,8,9]
 nums => [5,-22,3.5,44,98,44]
 */
+
+var animals = ['cat', 'ele', 'bird'];
+animals[0] = 'zebra';
+animals[1] = 'elephent';
+animals[2] = undefined; 
 
 
 /*
@@ -110,6 +178,11 @@ Ex: indexOfArray(nums,4) => 9
 **try more cases by your self
 */
 
+function  indexOfArray(array, index){
+    return array[index]; 
+}
+
+
 
 /*
 11
@@ -124,6 +197,11 @@ Ex: arrayExceptLast(nums) =>  [1,2,3,8]
 */
 
 
+function arrayExceptLast(array) {
+    return nums.splice(0, nums.length - 1);
+}
+
+
 /*
 12
 Create a function called addToEnd
@@ -135,6 +213,12 @@ Ex: addToEnd(nums,55) =>  [1,2,3,8,55]
 
 **try more cases by your self
 */
+
+
+function addToEnd(arr, value) {
+    arr[arr.length] = value;
+    return arr;
+}
 
 
 // all the exercises below should solved 2 times: 1- for loop 2- while lopp
@@ -151,6 +235,16 @@ Ex: sumArray(nums) => 23
 **try more cases by your self
 */
 
+function sumArray(arr) {
+    var sum = 0;
+    for(var i = 0; i < arr.length; i++) {
+        sum  = sum + arr[i];
+    }
+
+    return sum;
+}
+
+
 
 /*
 14
@@ -165,6 +259,15 @@ Ex: minInArray(nums) => 1
 **try more cases by your self
 */
 
+function minInArray(array) {
+    var minItem = array[0];
+
+    for(var i = 1; i < array.length; i++) {
+        if(minItem > arr[i])
+            minItem = array[i];
+    }
+}
+
 
 /*
 15
@@ -173,11 +276,17 @@ that accept an array and elemnt to remove
 and return the array after remove this elemnt from it
 
 var nums= [1,2,3,8,9]
-Ex: minInArray(nums,8) => [1,2,3,9]
+Ex: removeFromArray(nums,8) => [1,2,3,9]
 
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+
+
+function removeFromArray(array, element) {
+    var indexElement = array.indexOf(element);
+    array.splice(indexElement, 1);
+}
 
 
 /*
@@ -192,6 +301,8 @@ Ex: oddArray(nums) => [1,3,9]
 ** solve it one time using for loop and another using while loop
 **try more cases by your self
 */
+
+oddArrray
 
 
 /*
